@@ -23,17 +23,17 @@
                 </div>
 
                 <div class="form__item">
-                    <div class="form__title"> якой дрочиш лівою чи правою?</div>
+                    <div class="form__label"> якой дрочиш лівою чи правою?</div>
                     <div class="options">
 
                         <div class="options__item">
                             <input id="formRightHanded" type="radio" name="hand" value="right" class="options__input">
-                            <label for="formRightHanded" class="options__label">Правою</label>
+                            <label for="formRightHanded" class="options__label"><span>Правою</span></label>
                         </div>
 
                         <div class="options__item">
                             <input id="formLeftHanded" checked type="radio" name="hand" value="left" class="options__input">
-                            <label for="formLeftHanded" class="options__label">Лівою</label>
+                            <label for="formLeftHanded" class="options__label"><span>Лівою</span></label>
                         </div>
                     </div>
                 </div>
@@ -55,9 +55,27 @@
                 </div>
 
                 <div class="form__item">
-                    <div class="form__label"></div>
-                
+                    <div class="form__label">ВІдправте фото пеніса</div>
+
+                    <div class="file">
+                        <div class="file__item">
+                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+                            <div class="file__button">Обрати</div>
+                        </div>
+
+                        <div class="file__preview"></div>
+
+                    </div>
                 </div>
+
+                <div class="form__item">
+                    <div class="checkbox">
+                        <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input">
+                        <label for="formAgreement" class="checkbox__label"><span>Я повністю погоджуюсь що я відати почку <a href="#">і пеніс</a></span></label>
+                    </div>  
+                </div>
+
+                <button type="submit" class="form__button">Відправити в Чечню</button>
 
             </form>
         </div>
