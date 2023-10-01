@@ -126,8 +126,10 @@ textarea.form__input {
     transform: scale(0);
 }
 
-.select {}
-
+.select {
+    
+}
+/* 21 */
 .file {}
 
 .file__item {}

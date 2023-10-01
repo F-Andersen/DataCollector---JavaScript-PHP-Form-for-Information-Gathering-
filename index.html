@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/ladel.css">
     <title>BID PENIS</title>
 </head>
 <body>
@@ -45,13 +46,32 @@
 
                 <div class="form__item">
                     <div class="form__label">Скільки рочків дебілу?</div>
+                    <div class="__select" data-state="">
+                        <div class="__select__title" data-default="Option 0">Не придатний за віком</div>
+                        <div class="__select__content">
+                            <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked />
+                            <label for="singleSelect0" class="__select__label">Не придатний за віком</label>
+                            <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect1" class="__select__label">Доброволець</label>
+                            <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect2" class="__select__label">Мобілізований</label>
+                            <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect3" class="__select__label">Контрактник</label>
+                            <input id="singleSelect4" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect4" class="__select__label">Ветеран</label>
+                        </div>
+                    </div>
 
-                    <select name="age" id="#"  class="select">
+                    <!-- <div class="form__label">Скільки рочків дебілу?</div>
+
+                    <select name="age" id="#"  class="form__select">
                         <option value="від 0 до 18" selected="selected">Не придатний за віком</option>
                         <option value="від 18 до 25" selected="selected">Доброволець</option>
                         <option value="дід 25 до 32" selected="selected">Мобілізований</option>
                         <option value="від 32 до 200" selected="selected">Ветеран</option>
-                    </select>
+                    </select> -->
+
+
                 </div>
 
                 <div class="form__item">
@@ -80,5 +100,7 @@
             </form>
         </div>
     </div>
+    <script src="/js/label.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
