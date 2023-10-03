@@ -8,6 +8,31 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         let error = formValidate(form);
+
+        let formData = new FormData(form);
+        formData.append('image', formImage.file[0]);
+
+        if (error === 0) {
+            form.classList.add('_sending');
+            let response = await fetch('sendmail.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+
+                let result = await response.json();
+                alert(result.message);
+                formPreview.innerHTML = '';
+                form.reset();
+                
+            } else {
+                
+            }
+        } else {
+            alert('Кому бля написано імя вписати?')
+        }
+
     }
 
 
@@ -33,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     error++;
                 }
             }
-
         }
+        return error;
     }
     function formAddError(input) {
         input.parentElement.classList.add('_error');
@@ -47,5 +72,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+
+    const formImage = document.getElementById('formImage');
+
+    const formPreview = document.getElementById('formPreview');
+
+    formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
+    });
+
+    function uploadFile(file) {
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+            alert('Як ти заїбав фотрмати можна тільки. jpeg,png,gif дебіл');
+            formImage.value = '';
+            return;
+        }
+
+        if (file.size > 2 * 1024 * 1024) {
+            alert('Ти думаєш місце безплптне ? файл не більше 2 МБ або іди нахуй');
+            return;
+        }
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            formPreview.innerHTML = `<img src"${e.target.result}" alt="Фото">`;
+        };
+        reader.onerror = function (e) {
+            alert('БУГАГАГАГА ОШИБКА');
+        };
+        reader.readAsDataURL(file);
+    
     }
 });
