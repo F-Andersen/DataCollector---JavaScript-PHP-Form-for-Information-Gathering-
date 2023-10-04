@@ -7,33 +7,75 @@ document.addEventListener('DOMContentLoaded', function () {
     async function formSend(e) {
         e.preventDefault();
 
-        let error = formValidate(form);
+         let error = formValidate(form);
 
         let formData = new FormData(form);
-        formData.append('image', formImage.file[0]);
-
-        if (error === 0) {
+        formData.append('image', formImage.files[0]);
+// 
+         if (error === 0) {
             form.classList.add('_sending');
+
             let response = await fetch('sendmail.php', {
                 method: 'POST',
                 body: formData
             });
 
             if (response.ok) {
-
-                let result = await response.json();
-                alert(result.message);
-                formPreview.innerHTML = '';
-                form.reset();
+                    let result = await response.json();
+                    alert(result.message);
+                    formPreview.innerHTML = '';
+                    form.reset();
                 
             } else {
-                
+                alert("error їбаний");
             }
         } else {
-            alert('Кому бля написано імя вписати?')
+            alert('Кому бля написано імя вписати?');
         }
 
     }
+
+    // превірено
+
+// "use strict"
+//     document.addEventListener('DOMContentLoaded', function () {
+        
+//     const form = document.getElementById('form');
+//     form.addEventListener('submit', formSend);
+
+//         async function formSend(e) {
+//             e.preventDefault();
+
+//             let error = formValidate(form);
+
+//             let formData = new FormData(form);
+//             formData.append('image', formImage.files[0]);
+
+//             if (error === 0) {
+//                 form.classList.add('_sending');
+            
+//                 let response = await fetch('sendmail.php', {
+//                     method: 'POST',
+//                     body: formData
+//                 });
+            
+           
+//                 if (response.ok) {
+//                     let result = await response.json();
+//                     alert(result.message);
+//                     formPreview.innerHTML = '';
+//                     form.reset();
+//                 } else {
+//                 }
+//                 alert("Ошибка");
+//             } else {
+//                 alert('Заполните обязательные поля');
+//             }
+//         }
+
+
+
+
 
 
     function formValidate(form) {
@@ -81,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
     formImage.addEventListener('change', () => {
         uploadFile(formImage.files[0]);
     });
-
+// преревірено 
     function uploadFile(file) {
         if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
             alert('Як ти заїбав фотрмати можна тільки. jpeg,png,gif дебіл');
@@ -96,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var reader = new FileReader();
         reader.onload = function (e) {
-            formPreview.innerHTML = `<img src"${e.target.result}" alt="Фото">`;
+            formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
         };
         reader.onerror = function (e) {
             alert('БУГАГАГАГА ОШИБКА');

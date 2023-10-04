@@ -38,7 +38,7 @@ body {
 }
 /* сам css */
 
-.wrapper {}
+/* .wrapper {} */
 
 .form {
     max-width: 550px;
@@ -62,7 +62,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(51, 51, 51, 0.5) url(/img/9hgC.gif) center /100px no-repeat;
+    background: rgba(51, 51, 51, 0.5) url(/img/GBon.gif) center /100px no-repeat;
     /* background: url(/img/9hgC.gif) center /100px no-repeat; */
     opacity: 0;
     visibility: hidden;
@@ -157,11 +157,11 @@ textarea.form__input {
     transform: scale(0);
 }
 
-.select {
+/* .select {
     
-}
+} */
 /* 21 */
-.file {}
+/* .file {} */
 
 .file__item {
     position: relative;
@@ -198,9 +198,9 @@ textarea.form__input {
     max-width: 100%;
 }
 
-.checkbox {
+/* .checkbox {
     
-}
+} */
 
 .checkbox._error .checkbox__label::before {
     box-shadow: 0 0 15px red;
